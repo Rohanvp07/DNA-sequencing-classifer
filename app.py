@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import pickle
-import pandas as pd
 
 # Load the Multinomial Naive Bayes model and CountVectorizer object from disk
 filename = 'classifier.pkl'
