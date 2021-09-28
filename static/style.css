@@ -3,7 +3,7 @@
 body
 {
     overflow-x: hidden;
-    
+    background-image:url("https://images.newscientist.com/wp-content/uploads/2019/05/03155847/gettyimages-932737574-2.jpg")
 }
 .cal{
 	padding: 5px;
@@ -50,10 +50,11 @@ section
     justify-content: center;
     align-items: center;
     min-height: max-content;
-    background:  rgb(140, 203, 214);
+    /*background:  rgb(140, 203, 214);*/
     overflow: hidden;
     box-sizing:border-box;
     /*background-image: url('eden.jpg');*/
+	background-image:url("https://images.newscientist.com/wp-content/uploads/2019/05/03155847/gettyimages-932737574-2.jpg");
     background-size: cover;
     padding: 10px;
     width: 100%;
@@ -326,7 +327,7 @@ label
 
 .message-box{
     margin-top: 25%;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.7);
     color: black;
 }
 textarea {
