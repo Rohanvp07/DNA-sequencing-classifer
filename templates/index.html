@@ -1,49 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DNA sequence classifier</title>
-       
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel= "stylesheet" type= "text/css" href= "/static/style.css">
         <link rel="shortcut icon" type="image/x-icon" href="static/dna.png"/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        
     </head>
 
     <body>
 
-        <div class="cal">
-            <h1 style="position: relative;;z-index: 12;">DNA sequence classifier</h1>
-            <h6 style="position: relative;;z-index: 12;text-align: center;">A Machine Learning Web App, Built with Flask, Deployed using Heroku.</h6>
-        </div>
-        <div class="alert1 hide" id="a">
-            <span class="fas fa-exclamation-circle"></span>
-            <span class="closebtn" onclick="closebtn()">&times;</span> 
-            <span class="msg" id="content">Warning! This is Error Message</span>
-        </div>
-        <section>
-            
-            <div class="container">
-                <div class="card">
-                    <div class="imgBx">
-                        
-                        <form action="{{ url_for('predict') }}" method="POST">
-                              <textarea class='message-box' name="message" placeholder="Enter DNA sequence here... 
-For example, ATGCCCCAACTAAATACTACCGTATGGCCCACCATAATTACCCCCATACTCCTTACACTATTCCTCATCACCCAACTAAAAATATTAAACACAAACTACCACCTACCTCCCTCACCAAAGCCCATAAAAATAAAAAATTATAACAAACCCTGAGAACCAAAATGAACGAAAATCTGTTCGCTTCATTCATTGCCCCCACAATCCTAG" style="height:200px;width: 40rem;" required="required" ></textarea><br/>
-                        
-                            <div style="text-align: center;">
-                                <button type="submit" class="btn-sim" ><span>C H E C K</span></button>  
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-                <div class="h">
+        <!-- Website Title -->
+    	<div class="container">
+    		<h2 class='container-heading'>DNA sequence classifier</h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+        		<textarea class='message-box' name="message" rows="10" cols="75" placeholder="Enter DNA sequence here... 
+For example, ATGCCCCAACTAAATACTACCGTATGGCCCACCATAATTACCCCCATACTCCTTACACTATTCCTCATCACCCAACTAAAAATATTAAACACAAACTACCACCTACCTCCCTCACCAAAGCCCATAAAAATAAAAAATTATAACAAACCCTGAGAACCAAAATGAACGAAAATCTGTTCGCTTCATTCATTGCCCCCACAATCCTAG" required="required"></textarea><br/>
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	</form>
+    	</div>
+		<div class="h">
                     {% if output==0 %}
 				        <h4><span class='bg-dark danger'>Gene family : G protein coupled receptors</span></h4>
     				{% elif output==1 %}
@@ -62,14 +50,9 @@ For example, ATGCCCCAACTAAATACTACCGTATGGCCCACCATAATTACCCCCATACTCCTTACACTATTCCTCA
                     <br>
 					
                     </div> 
-            </div>
-            
 
-            
-        </section>
-       
-
-        <footer class="bg-dark text-center text-white" style="position: relative ;z-index: 8;height: 20%;box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        <!-- Footer -->
+         <footer class="bg-dark text-center text-white" style="position: relative ;z-index: 8;height: 20%;box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(15px);">
             <!-- Grid container -->
             
@@ -90,5 +73,7 @@ For example, ATGCCCCAACTAAATACTACCGTATGGCCCACCATAATTACCCCCATACTCCTTACACTATTCCTCA
                 
                   <br>
         </footer>         
+
+
     </body>
 </html>
